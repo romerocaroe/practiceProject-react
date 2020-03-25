@@ -25,7 +25,8 @@ function App() {
   //header
     const useStyles = makeStyles(theme => ({
       root: {
-        flexGrow: 1,
+        flexGrow: 6,
+        minWidth: "100%",
       },
       palette: {
         primary: teal[400],
@@ -38,7 +39,7 @@ function App() {
     <div className="App">
       <header>
         <div className={classes.root}>
-            <AppBar position="static" style={{background: '#78909c'}}>
+            <AppBar position="static" style={{background: '#3f51b5'}}>
                 <Toolbar variant="dense">
                 <Typography variant="h6" style={{color: '#eceff1'}}>
                   La biblioteca de Sondeos
