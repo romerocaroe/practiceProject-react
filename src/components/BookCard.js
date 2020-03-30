@@ -9,7 +9,6 @@ import CardMedia from '@material-ui/core/CardMedia';
 import {IconButton} from '@material-ui/core'
 import StarIcon from '@material-ui/icons/Star';
 import { yellow, grey } from '@material-ui/core/colors';
-import { Grid } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   root: {
