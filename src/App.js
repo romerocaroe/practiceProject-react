@@ -6,14 +6,13 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import teal from '@material-ui/core/colors/teal';
 import grey from '@material-ui/core/colors/grey';
-import Grid from '@material-ui/core/Grid';
 
 function App() {
   const [books, setBooks] = useState([]);
 
   //fetch with the backend
   useEffect(() => {
-    fetch('http://localhost:8888/api/books')
+    fetch('http://'+process.env.REACT_APP_BACK_URL+'/api/books')
     .then((response) => {
       return response.json();
     })
