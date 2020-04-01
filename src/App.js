@@ -6,6 +6,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import teal from '@material-ui/core/colors/teal';
 import grey from '@material-ui/core/colors/grey';
+import Grid from '@material-ui/core/Grid';
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -39,16 +40,18 @@ function App() {
     <div className="App">
       <header>
         <div className={classes.root}>
-            <AppBar position="static" style={{background: '#3f51b5'}}>
+            <AppBar position="static" style={{background: '#ffc107'}}>
                 <Toolbar variant="dense">
-                <Typography variant="h6" style={{color: '#eceff1'}}>
+                <Typography variant="h6" style={{color: '#616161'}}>
                   La biblioteca de Sondeos
                 </Typography>
                 </Toolbar>
             </AppBar>
         </div>
       </header>
-      <ShowBook books={books} />
+      <div className="ShowBook">
+        <ShowBook books={books} />
+      </div>
     </div>
   );
 }

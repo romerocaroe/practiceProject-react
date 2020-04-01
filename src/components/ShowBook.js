@@ -4,17 +4,23 @@ import Grid from '@material-ui/core/Grid';
 
 export default function ShowBook(props) {
     return(
-        <div className="ShowBook">
-            <Grid style={{padding:'24px', color: '#455a64'}} container spacing={10}>
-            {(props.books.length > 0) ? (
-                (props.books.map((book, index) =>
-                    <Grid key={index} item xs={12} sm={4} md={4} lg={4}>
-                    <BookCard title={book.title} author={book.author} img={book.img} />
-                    </Grid>
-                ))
-            ) : null
-            } 
+        <Grid container spacing={0}>
+            <Grid item xs={11} style={{margin: '1em'}}>
+                <Grid container spacing={10} justify="center">
+                {(props.books.length > 0) ? (
+                    (props.books.map((book, index) =>
+                        <Grid item key={index} xs={10} sm={4} 
+                        container
+                        direction="row"
+                        justify="center"
+                        alignItems="flex-start">
+                            <BookCard title={book.title} author={book.author} img={book.img} />
+                        </Grid>
+                    ))
+                ) : null
+                } 
+                </Grid>
             </Grid>
-        </div>
+        </Grid>
     );
 }

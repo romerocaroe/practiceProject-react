@@ -3,7 +3,6 @@ import { makeStyles, createMuiTheme, responsiveFontSizes } from '@material-ui/co
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import {IconButton} from '@material-ui/core'
@@ -12,15 +11,29 @@ import { yellow, grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 300,
-    maxHeight: 550,
+    flexGrow: 1,
+    padding: theme.spacing(0),
+    [theme.breakpoints.down('xs')]: {
+      width: 280,
+      height: 500,
+    },
+    [theme.breakpoints.up('md')]: {
+      width: 260,
+      height: 500,
+    },
   },
   media: {
-    maxWidth: 300,
-    minWidth: 200,
-    maxHeight: 400,
-    minHeight: 250,
-  }}));
+    padding: theme.spacing(0),
+    [theme.breakpoints.down('xs')]: {
+      width: 280,
+      height: 380,
+    },
+    [theme.breakpoints.up('md')]: {
+      width: 260,
+      height: 380,
+    },
+  }
+}));
 
 //estilos typography
 let theme = createMuiTheme();
@@ -34,7 +47,7 @@ export default function BookCard(book) {
   };
 
   return (
-    <div className="BookCard" style={{textAlign: 'center'}}>
+    <div className="BookCard" style={{paddingBottom: '1em', textAlign: 'center'}}>
         <Card className={classes.root} elevation={3}>
           <CardActionArea>
                 <CardMedia
@@ -45,21 +58,17 @@ export default function BookCard(book) {
                   
                   />
               <CardContent theme={theme}>
-                  <Typography gutterBottom variant="h5" component="h2">
-                      {book.title}
-                  </Typography>
-                  <Typography variant="h6" color="textSecondary" component="p">
-                      {book.author}
-                  </Typography>
+                <Typography>
+                    {book.title}
+                </Typography>
+                <Typography color="textSecondary">
+                    {book.author}
+                </Typography>
+                <IconButton onClick={onClick} style={{color: starIcon ? yellow[600] : grey[600]}}>
+                  <StarIcon />
+                </IconButton>
               </CardContent>
           </CardActionArea>
-          <div style={{align: 'center'}}>
-            <CardActions>
-                  <IconButton onClick={onClick} style={{color: starIcon ? yellow[600] : grey[600]}}>
-                    <StarIcon fontSize="large" />
-                  </IconButton>
-            </CardActions>
-          </div>
         </Card>
     </div>
   );
