@@ -1,3 +1,10 @@
+Flujo
+    -App.js
+        -ShowBook.js
+            -Navbar.js
+            -SearchFav.js
+            -BookCard.js
+
 # practiceProject-react
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
